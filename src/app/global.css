@@ -1,14 +1,53 @@
 :root {
   --zen-font-family: var(--font-inter), sans-serif;
+
+  /* Sito brand (src/brand.ts in wasddd431/sito). */
+  --sito-cobalt: #2146d0;
+  --sito-ink: #0a1233;
+  --sito-yellow: #ffd23f;
 }
 
-/* Preserve the brand accent when Zen applies its light or dark theme tokens. */
-:root,
-[data-theme="light"],
+/*
+ * Sito look: Zen's neutral greys get a hint of ink, cobalt is the primary, and the yellow stays an
+ * accent for charts. The tokens are redefined for both themes so Zen's theme switch keeps the brand.
+ */
+:root {
+  --zen-palette-50: oklch(98.6% 0.004 270);
+  --zen-palette-100: oklch(96.8% 0.007 270);
+  --zen-palette-200: oklch(92% 0.012 270);
+  --zen-palette-300: oklch(86.5% 0.018 270);
+  --zen-palette-400: oklch(70% 0.03 270);
+  --zen-palette-500: oklch(54% 0.04 270);
+  --zen-palette-600: oklch(42% 0.05 270);
+  --zen-palette-700: oklch(34% 0.06 270);
+  --zen-palette-800: oklch(26% 0.07 270);
+  --zen-palette-900: oklch(20% 0.08 270);
+  --zen-palette-950: oklch(14% 0.07 270);
+}
+
+:root:not(.dark):not([data-theme="dark"]),
+[data-theme="light"] {
+  --zen-primary: var(--sito-cobalt);
+  --zen-primary-fg: #fff;
+  --zen-fg: var(--sito-ink);
+  --zen-focus-ring: color-mix(in oklch, var(--sito-cobalt) 55%, white);
+}
+
 [data-theme="dark"],
 .dark {
-  --zen-primary: oklch(62.3% 0.214 259.815);
-  --zen-primary-fg: oklch(98.5% 0 0);
+  --zen-primary: #6f8dff;
+  --zen-primary-fg: var(--sito-ink);
+  --zen-focus-ring: #6f8dff;
+}
+
+/* The browser's own surfaces follow the brand too: selection, caret and native form controls. */
+:root {
+  accent-color: var(--zen-primary);
+  caret-color: var(--zen-primary);
+}
+
+::selection {
+  background-color: color-mix(in oklch, var(--sito-cobalt) 24%, transparent);
 }
 
 /* Zen's rem-based typography and spacing assume the browser's default root size. */
