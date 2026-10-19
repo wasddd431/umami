@@ -41,7 +41,7 @@ export function LoginForm() {
       <Icon size="lg">
         <Logo />
       </Icon>
-      <Heading>umami</Heading>
+      <Heading>Sito</Heading>
       <Form
         onSubmit={handleSubmit}
         error={getErrorMessage(error)}

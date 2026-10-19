@@ -233,34 +233,35 @@ export const ROLE_PERMISSIONS = {
   [ROLES.teamViewOnly]: [],
 } as const;
 
+// Sito brand (src/brand.ts in wasddd431/sito): cobalt #2146d0, ink #0a1233, yellow #ffd23f.
 export const THEME_COLORS = {
   light: {
-    primary: '#2680eb',
-    text: '#838383',
-    line: '#d9d9d9',
-    fill: '#f9f9f9',
+    primary: '#2146d0',
+    text: '#6b7390',
+    line: '#dde1ee',
+    fill: '#f6f7fb',
   },
   dark: {
-    primary: '#2680eb',
-    text: '#7b7b7b',
-    line: '#3a3a3a',
-    fill: '#191919',
+    primary: '#6f8dff',
+    text: '#8b93ad',
+    line: '#2a3252',
+    fill: '#141b38',
   },
 } as const;
 
 export const CHART_COLORS = [
-  '#2680eb',
-  '#9256d9',
-  '#44b556',
-  '#e68619',
-  '#e34850',
-  '#f7bd12',
-  '#01bad7',
-  '#6734bc',
-  '#89c541',
-  '#ffc301',
-  '#ec1562',
-  '#ffec16',
+  '#2146d0',
+  '#ffd23f',
+  '#0a1233',
+  '#6f8dff',
+  '#1f9d6b',
+  '#e8603c',
+  '#8b5cf6',
+  '#0ea5c8',
+  '#c99a06',
+  '#d6457a',
+  '#5a6b8c',
+  '#f0a030',
 ];
 
 export const DOMAIN_REGEX =
